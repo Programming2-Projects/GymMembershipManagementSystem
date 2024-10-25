@@ -8,6 +8,7 @@ public class TrainerDatabase {
     public TrainerDatabase (String fileName) {
         this.fileName = fileName;
         this.records = new ArrayList<>();
+        readFromFile();
     }
 
     public void readFromFile () {
@@ -16,7 +17,7 @@ public class TrainerDatabase {
             while ((line = bufferedReader.readLine()) != null)
                 this.records.add(createRecordFrom(line));
         } catch (IOException e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
     }
 
@@ -36,8 +37,8 @@ public class TrainerDatabase {
         return new Trainer(trainerId, name, email, speciality, phoneNumber);
     }
 
-    public ArrayList<Trainer> returnAllRecords () {
-        return records;
+    public Trainer[] returnAllRecords () {
+        return records.toArray(new Trainer[records.size()]);
     }
 
     public boolean contains (String key) {
@@ -73,8 +74,9 @@ public class TrainerDatabase {
                 printWriter.println(line);
             }
         } catch (IOException e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
     }
+    
     
 }

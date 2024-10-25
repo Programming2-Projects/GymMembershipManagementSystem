@@ -1,10 +1,8 @@
-import java.util.ArrayList;
-
 public class AdminRole {
 private TrainerDatabase database;
 
 public AdminRole() {
-    database = new TrainerDatabase();
+    database = new TrainerDatabase("Trainers.txt");
 }
 
 public void addTrainer (String trainerId, String name, String email, String specialty, String phoneNumber){
@@ -14,7 +12,7 @@ public void addTrainer (String trainerId, String name, String email, String spec
     }   
 }
 
-public ArrayList<Trainer> getListOfTrainers (){
+public Trainer[] getListOfTrainers (){
     return database.returnAllRecords();
 }
 
