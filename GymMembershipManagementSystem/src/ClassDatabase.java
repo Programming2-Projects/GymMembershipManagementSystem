@@ -8,6 +8,7 @@ public class ClassDatabase {
     public ClassDatabase (String fileName) {
         this.fileName = fileName;
         this.records = new ArrayList<>();
+        readFromFile();
     }
 
     public void readFromFile () {
@@ -36,8 +37,8 @@ public class ClassDatabase {
         return new Class(classID, className, trainerID, duration, availableSeats);
     }
 
-    public ArrayList<Class> returnAllRecords () {
-        return records;
+    public Class[] returnAllRecords () {
+        return records.toArray(new Class[0]);
     }
 
     public boolean contains (String key) {
