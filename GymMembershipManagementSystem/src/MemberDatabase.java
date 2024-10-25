@@ -16,7 +16,7 @@ public class MemberDatabase {
             while ((line = bufferedReader.readLine()) != null)
                 this.records.add(createRecordFrom(line));
         } catch (IOException e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
     }
 
@@ -74,7 +74,7 @@ public class MemberDatabase {
                 printWriter.println(line);
             }
         } catch (IOException e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
     }
     
