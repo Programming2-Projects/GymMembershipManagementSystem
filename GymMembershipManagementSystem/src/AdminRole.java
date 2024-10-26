@@ -1,27 +1,33 @@
+import java.util.ArrayList;
+
 public class AdminRole {
-private TrainerDatabase database;
+    private TrainerDatabase trainerDatabase;
 
-public AdminRole() {
-    database = new TrainerDatabase("Trainers.txt");
-}
+    public AdminRole() {
+        this.trainerDatabase = new TrainerDatabase("Trainers.txt");
+    }
 
-public void addTrainer (String trainerId, String name, String email, String specialty, String phoneNumber){
-    Trainer newTrainer = new Trainer(trainerId, name, email, specialty, phoneNumber);
-    if(!database.insertRecord(newTrainer)){
-        System.out.println("Trainer ID already in use.");
-    }   
-}
+    public boolean addTrainer (String trainerId, String name, String email, String specialty, String phoneNumber){
+        Trainer trainer;
+        try {
+            trainer = new Trainer(trainerId, name, email, specialty, phoneNumber);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return trainerDatabase.insertRecord(trainer);
+    }
 
-public Trainer[] getListOfTrainers (){
-    return database.returnAllRecords();
-}
+    public ArrayList<Trainer> getListOfTrainers (){
+        return trainerDatabase.returnAllRecords();
+    }
 
-public void removeTrainer (String key){
-    Trainer trainerToDelete = database.getRecord(key);
-    database.deleteRecord(trainerToDelete);
-}
+    public boolean removeTrainer (String key){
+        Trainer trainerToDelete = trainerDatabase.getRecord(key);
+        return trainerDatabase.deleteRecord(trainerToDelete);
+    }
 
-public void logout(){
-    database.saveToFile();
-}
+    public void logout(){
+        trainerDatabase.saveToFile();
+    }
 }
