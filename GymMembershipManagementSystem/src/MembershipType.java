@@ -1,23 +1,17 @@
 public enum MembershipType {
     MONTHLY, // 1 month validity
-    QUARTERLY, // 3 month validity
-    ANNUAL, // 1 year validity
-    PREMIUM, // 1 month validity  + extra benefits
-    LIFETIME; // Lifetime validity
+    YEARLY, // 1 year validity
+    PREMIUM; // 1 month validity  + extra benefits
 
     @Override
     public String toString() {
         switch (this) {
             case MONTHLY:
                 return "Monthly subscribtion";
-            case QUARTERLY:
-                return "Quarterly subscribtion";
-            case ANNUAL:
-                return "Annual subscribtion";
+            case YEARLY:
+                return "Yearly subscribtion";
             case PREMIUM:
-                return "Premium subscribtion";
-            case LIFETIME:
-                return "Lifetime subscribtion";       
+                return "Premium subscribtion";   
             default:
                 return super.toString();
         }      
