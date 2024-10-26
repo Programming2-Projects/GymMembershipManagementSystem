@@ -38,8 +38,8 @@ public class MemberDatabase {
         return new Member(memberId, name, membershipType, email, phoneNumber, status);
     }
 
-    public Member[] returnAllRecords () {
-        return records.toArray(new Member[0]);
+    public ArrayList<Member> returnAllRecords () {
+        return records;
     }
 
     public boolean contains (String key) {
@@ -63,8 +63,8 @@ public class MemberDatabase {
         return true;
     }
 
-    public void deleteRecord (Member record) {
-        this.records.remove(record); 
+    public boolean deleteRecord (Member record) {
+        return this.records.remove(record); 
     }
 
     public void saveToFile () {
