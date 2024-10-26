@@ -1,13 +1,13 @@
 public enum MembershipStatus {
-    ACTIVE, INACTIVE;
+    ACTIVE, CANCELED;
 
     @Override
     public String toString() {
         switch (this) {
             case ACTIVE:
-                return "Active member";
-            case INACTIVE:
-                return "Inactive member";       
+                return "Active membership";
+            case CANCELED:
+                return "Canceled membership";       
             default:
                 return super.toString();
         }      
