@@ -6,7 +6,7 @@ private String speciality;
 private String phoneNumber;
 
 public Trainer(String trainerId, String name, String email, String speciality, String phoneNumber) {
-    if (!Validator.isValidID(trainerId))
+    if (!Validator.isValidID(trainerId, 'T'))
         throw new IllegalArgumentException("Invalid ID number!");
     if (!Validator.isValidName(name))
         throw new IllegalArgumentException("Invalid name!");
@@ -24,8 +24,8 @@ public Trainer(String trainerId, String name, String email, String speciality, S
 
 public String lineRepresentation (){
     String line = String.join(",",
-    trainerId,name,email,speciality,phoneNumber);
-
+    trainerId, name, email, speciality, phoneNumber);
+    
     return line;
 }
 

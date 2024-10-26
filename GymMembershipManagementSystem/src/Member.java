@@ -4,7 +4,7 @@ public class Member {
     private MembershipType membershipType;
 
     public Member(String memberId, String name, MembershipType membershipType, String email, String phoneNumber, MembershipStatus status) {
-        if (!Validator.isValidID(memberId))
+        if (!Validator.isValidID(memberId, 'M'))
             throw new IllegalArgumentException("Invalid ID number!");
         if (!Validator.isValidName(name))
             throw new IllegalArgumentException("Invalid name!");
