@@ -9,6 +9,7 @@ public class MemberClassRegistrationDatabase {
     public MemberClassRegistrationDatabase (String fileName) {
         this.fileName = fileName;
         this.records = new ArrayList<>();
+        readFromFile();
     }
 
     public void readFromFile () {
@@ -31,7 +32,7 @@ public class MemberClassRegistrationDatabase {
 
         String memberID = data[0];
         String classID = data[1];
-        String status = data[2]
+        MembershipStatus status = MembershipStatus.valueOf(data[2]);
         LocalDate registrationDate = LocalDate.parse(data[3]);
         return new MemberClassRegistration(memberID, classID, status, registrationDate);
     }
@@ -41,7 +42,7 @@ public class MemberClassRegistrationDatabase {
     }
 
     public boolean contains (String key) {
-        for (MemberClassRegistration registration : records)
+        for (MemberClassRegistration registration:records)
             if (registration.getSearchKey().equals(key))
                 return true;
         return false;
@@ -61,8 +62,8 @@ public class MemberClassRegistrationDatabase {
         return true;
     }
 
-    public void deleteRecord (MemberClassRegistration record) {
-        this.records.remove(record); 
+    public boolean deleteRecord (MemberClassRegistration record) {
+        return this.records.remove(record); 
     }
 
     public void saveToFile () {
