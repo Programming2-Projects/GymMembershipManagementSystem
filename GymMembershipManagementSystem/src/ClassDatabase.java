@@ -37,8 +37,8 @@ public class ClassDatabase {
         return new Class(classID, className, trainerID, duration, availableSeats);
     }
 
-    public Class[] returnAllRecords () {
-        return records.toArray(new Class[0]);
+    public ArrayList<Class> returnAllRecords () {
+        return records;
     }
 
     public boolean contains (String key) {
@@ -62,8 +62,8 @@ public class ClassDatabase {
         return true;
     }
 
-    public void deleteRecord (Class record) {
-        this.records.remove(record); 
+    public boolean deleteRecord (Class record) {
+        return this.records.remove(record); 
     }
 
     public void saveToFile () {
