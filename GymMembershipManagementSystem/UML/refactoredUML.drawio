@@ -1,0 +1,219 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.3">
+  <diagram name="Page-1" id="uNXpM8GX55VVOr5tb7Le">
+    <mxGraphModel dx="2327" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-1" value="Trainer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="50" width="360" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-2" value="- trainerId: String&lt;div&gt;- name: String&lt;/div&gt;&lt;div&gt;- email: String&lt;/div&gt;&lt;div&gt;- speciality: String&lt;/div&gt;&lt;div&gt;- phoneNumber: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-1" vertex="1">
+          <mxGeometry y="26" width="360" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D0CEE2;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-1" vertex="1">
+          <mxGeometry y="110" width="360" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-4" value="+ Trainer( trainerId: String,&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;name: String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;email: String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;speciality: String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;phoneNumber: String)&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ lineRepresentation: String&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ getSearchkey: String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-1" vertex="1">
+          <mxGeometry y="118" width="360" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-5" value="TrainerDatabase" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-180" y="20" width="260" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-6" value="- records: ArrayList&amp;lt;Trainer&amp;gt;&lt;div&gt;- fileName: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-5" vertex="1">
+          <mxGeometry y="26" width="260" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D0CEE2;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-5" vertex="1">
+          <mxGeometry y="70" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-8" value="+ TrainerDatabase( fileName: String)&lt;div&gt;+ readFromFile&lt;/div&gt;&lt;div&gt;+ createRecordFrom( line: String): Trainer&lt;/div&gt;&lt;div&gt;+ returnAllRecords(): ArrayList&amp;lt;Trainer&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ contains( key: String): boolean&lt;/div&gt;&lt;div&gt;+ getRecord( key: String): Trainer&lt;/div&gt;&lt;div&gt;+ insertRecord( record: Trainer): boolean&lt;/div&gt;&lt;div&gt;+ deleteRecord( record: Trainer): boolean&lt;/div&gt;&lt;div&gt;+ saveToFile&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-5" vertex="1">
+          <mxGeometry y="78" width="260" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-9" value="AdminRole" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-630" y="80" width="320" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-10" value="- trainerDataBase: TraierDataBase" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-9" vertex="1">
+          <mxGeometry y="26" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D0CEE2;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-9" vertex="1">
+          <mxGeometry y="52" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-12" value="&lt;div&gt;+ AdminRole&lt;/div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;addTrainer (trainerId: String, name: String, email: String, specialty: String, &lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;phoneNumber: String)&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ getListOfTrainers&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ removeTrainer (key: String)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;logout&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-9" vertex="1">
+          <mxGeometry y="60" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-13" value="Member" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-610" y="1470" width="340" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D0CEE2;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-13" vertex="1">
+          <mxGeometry y="26" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-14" value="-&amp;nbsp;memberID: String&lt;div&gt;- name: String&lt;/div&gt;&lt;div&gt;- membershipType: MembershipType&lt;/div&gt;&lt;div&gt;- email: String&lt;/div&gt;&lt;div&gt;- phoneNumber: String&lt;/div&gt;&lt;div&gt;- status: MembershipStatus&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-13" vertex="1">
+          <mxGeometry y="34" width="340" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-16" value="&lt;div&gt;+ Member(&lt;span style=&quot;background-color: initial;&quot;&gt;memberID: String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;name: String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;membershipType: MembershipType,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;email: String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;phoneNumber: String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;status: MembershipStatus)&lt;/span&gt;&lt;/div&gt;+&amp;nbsp;lineRepresentation: String&lt;div&gt;+&amp;nbsp;getSearchKey: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-13" vertex="1">
+          <mxGeometry y="128" width="340" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-18" value="MemberDatabase" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-520" y="1030" width="260" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-19" value="- records: ArrayList&amp;lt;Member&amp;gt;&lt;div&gt;- filename: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-18" vertex="1">
+          <mxGeometry y="26" width="260" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D0CEE2;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-18" vertex="1">
+          <mxGeometry y="70" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-21" value="+ MemberDatabase( fileName: String)&lt;div&gt;+ readFromFile&lt;/div&gt;&lt;div&gt;+ createRecordFrom( line: String): Member&lt;/div&gt;&lt;div&gt;+ returnAllRecords(): ArrayList&amp;lt;Member&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ contains( key: String): boolean&lt;/div&gt;&lt;div&gt;+ getRecord( key: String): Member&lt;/div&gt;&lt;div&gt;+ insertRecord( record: Member): boolean&lt;/div&gt;&lt;div&gt;+ deleteRecord( record: Member): boolean&lt;/div&gt;&lt;div&gt;+ saveToFile&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-18" vertex="1">
+          <mxGeometry y="78" width="260" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-22" value="Class" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-180" y="1470" width="330" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-23" value="&lt;div&gt;- classID:&amp;nbsp;String&lt;/div&gt;&lt;div&gt;- className:&amp;nbsp;String&lt;/div&gt;&lt;div&gt;- trainerID:&amp;nbsp;String&lt;/div&gt;&lt;div&gt;- duration: int&lt;/div&gt;&lt;div&gt;- availableSeats: int.&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-22" vertex="1">
+          <mxGeometry y="26" width="330" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-24" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D0CEE2;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-22" vertex="1">
+          <mxGeometry y="110" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-25" value="&lt;div&gt;+ Class(&lt;span style=&quot;background-color: initial;&quot;&gt;classID:&amp;nbsp;String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;className:&amp;nbsp;String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;trainerID:&amp;nbsp;String,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;duration: int,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;availableSeats: int)&lt;/span&gt;&lt;/div&gt;+&amp;nbsp;getAvailableSeats: int&lt;div&gt;+&amp;nbsp;setAvailableSeats (int availableSeats)&lt;/div&gt;&lt;div&gt;+&amp;nbsp;lineRepresentation: String&lt;/div&gt;&lt;div&gt;+&amp;nbsp;getSearchKey: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-22" vertex="1">
+          <mxGeometry y="118" width="330" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-26" value="ClassDatabase" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-130" y="1020" width="260" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-27" value="- records: ArrayList&amp;lt;Class&amp;gt;&lt;div&gt;- fileName: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-26" vertex="1">
+          <mxGeometry y="26" width="260" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-28" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D0CEE2;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-26" vertex="1">
+          <mxGeometry y="70" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-29" value="+ ClassDatabase( fileName: String)&lt;div&gt;+ readFromFile&lt;/div&gt;&lt;div&gt;+ createRecordFrom( line: String): Class&lt;/div&gt;&lt;div&gt;+ returnAllRecords(): ArrayList&amp;lt;Class&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ contains( key: String): boolean&lt;/div&gt;&lt;div&gt;+ getRecord( key: String): Class&lt;/div&gt;&lt;div&gt;+ insertRecord( record: Class): boolean&lt;/div&gt;&lt;div&gt;+ deleteRecord( record: Class): boolean&lt;/div&gt;&lt;div&gt;+ saveToFile&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-26" vertex="1">
+          <mxGeometry y="78" width="260" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-30" value="MemberClassRegistration" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="219" y="1470" width="390" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-31" value="-&amp;nbsp;memberID:&amp;nbsp;String&lt;div&gt;- classID:&amp;nbsp;String&lt;div&gt;- status: MembershipStatus&lt;/div&gt;&lt;/div&gt;&lt;div&gt;- registrationDate: LocalDate&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-30" vertex="1">
+          <mxGeometry y="26" width="390" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-32" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D0CEE2;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-30" vertex="1">
+          <mxGeometry y="100" width="390" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-33" value="&lt;div style=&quot;&quot;&gt;+ MemberClassRegistration(&lt;span style=&quot;background-color: initial;&quot;&gt;memberID:&amp;nbsp;String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;classID:&amp;nbsp;String)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;div&gt;+ MemberClassRegistration(&lt;span style=&quot;background-color: initial;&quot;&gt;memberID:&amp;nbsp;String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;classID:&amp;nbsp;String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;status: MembershipStatus,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;registrationDate: LocalDate&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;getMemberID: String&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ getClassID: String&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ getRegistrationDate: LocalDate&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ getSearchKey: String&lt;/div&gt;&lt;div&gt;+ setStatus (status: MembershipStatus)&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ lineRepresentation: String&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-30" vertex="1">
+          <mxGeometry y="108" width="390" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-34" value="MemberClassRegistrationDatabase" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="220" y="1020" width="340" height="362" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-35" value="- records: ArrayList&amp;lt;MemberClassRegistration&amp;gt;&lt;div&gt;- fileName: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-34" vertex="1">
+          <mxGeometry y="26" width="340" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-36" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D0CEE2;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-34" vertex="1">
+          <mxGeometry y="70" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-37" value="+ MemberClassRegistrationDatabase( fileName: String)&lt;div&gt;+ readFromFile&lt;/div&gt;&lt;div&gt;+ createRecordFrom( line: String):&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;MemberClassRegistration&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ returnAllRecords(): ArrayList&amp;lt;&lt;span style=&quot;background-color: initial;&quot;&gt;MemberClassRegistration&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ contains( key: String): boolean&lt;/div&gt;&lt;div&gt;+ getRecord( key: String):&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;MemberClassRegistration&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ insertRecord( record: MemberClassRegistration): boolean&lt;/div&gt;&lt;div&gt;+ deleteRecord( record: MemberClassRegistration): boolean&lt;/div&gt;&lt;div&gt;+ saveToFile&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-34" vertex="1">
+          <mxGeometry y="78" width="340" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="q00j8vEAsBJCaMF-4gGI-2" value="+ MemberClassRegistrationDatabase( fileName: String)&lt;div&gt;+ readFromFile&lt;/div&gt;&lt;div&gt;+ createRecordFrom( line: String):&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;MemberClassRegistration&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ returnAllRecords(): ArrayList&amp;lt;&lt;span style=&quot;background-color: initial;&quot;&gt;MemberClassRegistration&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ contains( key: String): boolean&lt;/div&gt;&lt;div&gt;+ getRecord( key: String):&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;MemberClassRegistration&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ insertRecord( record: MemberClassRegistration): boolean&lt;/div&gt;&lt;div&gt;+ deleteRecord( record: MemberClassRegistration): boolean&lt;/div&gt;&lt;div&gt;+ saveToFile&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-34" vertex="1">
+          <mxGeometry y="220" width="340" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="MHfqX0MKSJe0IbOkMQim-5" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="aKMdua-5Uy_HJUvLc1qy-34">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="150" y="370" as="sourcePoint" />
+            <mxPoint x="150" y="450" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="320" />
+              <mxPoint x="150" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-38" value="TrainerRole" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-230" y="340" width="360" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-39" value="- memberDatabase: MemberDatabase&lt;div&gt;- classDatabase: Classdatabase&lt;/div&gt;&lt;div&gt;- registrationDatabase:&amp;nbsp;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;MemberClassRegistrationDatabase&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-38" vertex="1">
+          <mxGeometry y="26" width="360" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-40" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D0CEE2;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-38" vertex="1">
+          <mxGeometry y="80" width="360" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="aKMdua-5Uy_HJUvLc1qy-41" value="+ TrainerRole&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;addMember (memberID: String, name: String, membershipType: String, email: String, &lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;phoneNumber: String, status: String): boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ getListOfMembers: ArrayList&amp;lt;Member&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ addClass (classID: String, className: String, trainerID: String, duration: int,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;maxParticipants: int): boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ getListOfClasses: ArrayList&amp;lt;Classes&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;div&gt;+ registerMemberForClass (memberID: String, classID: String, registrationDate: LocalDate): boolean&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ cancelRegistration (memberID: String:, classID: String): boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ getListOfRegistrations ():ArrayList&amp;lt;MemberClassRegistration&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ logout ()&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;" parent="aKMdua-5Uy_HJUvLc1qy-38" vertex="1">
+          <mxGeometry y="88" width="360" height="212" as="geometry" />
+        </mxCell>
+        <mxCell id="q00j8vEAsBJCaMF-4gGI-13" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=1;labelBackgroundColor=none;strokeColor=#736CA8;fontColor=default;" parent="1" edge="1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="-310" y="159.47" as="sourcePoint" />
+            <mxPoint x="-180" y="159" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="q00j8vEAsBJCaMF-4gGI-23" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=1;labelBackgroundColor=none;strokeColor=#736CA8;fontColor=default;" parent="1" edge="1">
+          <mxGeometry x="-0.503" y="10" relative="1" as="geometry">
+            <mxPoint x="-40" y="639.998181818182" as="sourcePoint" />
+            <mxPoint x="-39" y="720" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="q00j8vEAsBJCaMF-4gGI-24" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.271;entryY=0.446;entryDx=0;entryDy=0;labelBackgroundColor=none;strokeColor=#736CA8;fontColor=default;entryPerimeter=0;" parent="1" source="aKMdua-5Uy_HJUvLc1qy-18" target="q00j8vEAsBJCaMF-4gGI-52" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-400" y="950" as="sourcePoint" />
+            <mxPoint x="-132.5" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="q00j8vEAsBJCaMF-4gGI-25" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=1;exitX=0.376;exitY=-0.008;exitDx=0;exitDy=0;labelBackgroundColor=none;strokeColor=#736CA8;fontColor=default;exitPerimeter=0;entryX=0.508;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="aKMdua-5Uy_HJUvLc1qy-26" target="q00j8vEAsBJCaMF-4gGI-52" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-280" y="1040" as="sourcePoint" />
+            <mxPoint x="-45" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="q00j8vEAsBJCaMF-4gGI-26" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.728;entryY=0.268;entryDx=0;entryDy=0;labelBackgroundColor=none;strokeColor=#736CA8;fontColor=default;entryPerimeter=0;" parent="1" source="aKMdua-5Uy_HJUvLc1qy-34" target="q00j8vEAsBJCaMF-4gGI-52" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="190" y="970" as="sourcePoint" />
+            <mxPoint x="17.299999999999727" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="q00j8vEAsBJCaMF-4gGI-50" value="DataBases" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#D0CEE2;fontColor=#1A1A1A;fillColor=#5D7F99;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-210" y="720" width="350" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="q00j8vEAsBJCaMF-4gGI-52" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontColor=#1A1A1A;rounded=1;" parent="q00j8vEAsBJCaMF-4gGI-50" vertex="1">
+          <mxGeometry y="26" width="350" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="MHfqX0MKSJe0IbOkMQim-3" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=0.46;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="aKMdua-5Uy_HJUvLc1qy-29">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="-70" y="1310" as="sourcePoint" />
+            <mxPoint x="-10" y="1470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MHfqX0MKSJe0IbOkMQim-4" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=0.46;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="-390.71" y="1250" as="sourcePoint" />
+            <mxPoint x="-390.71" y="1470" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-390.71" y="1370" />
+              <mxPoint x="-390.71" y="1370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MHfqX0MKSJe0IbOkMQim-6" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="80" y="159.29000000000002" as="sourcePoint" />
+            <mxPoint x="200" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MHfqX0MKSJe0IbOkMQim-7" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;entryX=0.531;entryY=0.013;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-35.71" y="236.1" as="sourcePoint" />
+            <mxPoint x="-35.550000000000146" y="340.0000000000001" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MHfqX0MKSJe0IbOkMQim-8" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="MHfqX0MKSJe0IbOkMQim-7">
+          <mxGeometry x="-0.4684" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MHfqX0MKSJe0IbOkMQim-9" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="MHfqX0MKSJe0IbOkMQim-7">
+          <mxGeometry x="0.384" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
