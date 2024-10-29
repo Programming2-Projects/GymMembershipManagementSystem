@@ -17,7 +17,7 @@ public class Class {
         this.availableSeats = availableSeats;
     }
 
-    public int getAvailabeSeats () {
+    public int getAvailableSeats () {
         return availableSeats;
     }
 
@@ -35,6 +35,12 @@ public class Class {
 
     public String getSearchKey () {
         return classID;
+    }
+
+    @Override
+    public String toString() {
+        return "Class [classID=" + classID + ", className=" + className + ", trainerID=" + trainerID + ", duration="
+                + duration + ", availableSeats=" + availableSeats + "]";
     }
 
     
