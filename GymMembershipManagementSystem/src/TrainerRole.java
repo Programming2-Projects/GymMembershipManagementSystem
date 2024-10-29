@@ -8,13 +8,14 @@ public class TrainerRole {
     private MemberClassRegistrationDatabase registrationDatabase;
 
     public TrainerRole () {
-        this.memberDatabase = new MemberDatabase("Members.txt");
-        this.classDatabase = new ClassDatabase("Class.txt");
-        this.registrationDatabase = new MemberClassRegistrationDatabase("Registration.txt");
+        this.memberDatabase = new MemberDatabase("lib/Members.txt");
+        this.classDatabase = new ClassDatabase("lib/Class.txt");
+        this.registrationDatabase = new MemberClassRegistrationDatabase("lib/Registration.txt");
+        System.out.println("registration");
     }
 
     // Creates a new member object and inserts it into the MemberDatabase
-    public boolean addMember (String memberID, String name, MembershipType membershipType, String email, String phoneNumber, MembershipStatus status) {
+    public boolean addMember (String memberID, String name, String membershipType, String email, String phoneNumber, String status) {
         Member member;
         try {
             member = new Member(memberID, name, membershipType, email, phoneNumber, status);
@@ -63,7 +64,7 @@ public class TrainerRole {
         }
 
         // Check for available seats
-        int seats = class_.getAvailabeSeats();
+        int seats = class_.getAvailableSeats();
         if (seats < 1) {
             System.out.println("No available seats!!");
             return false;
@@ -72,7 +73,7 @@ public class TrainerRole {
         // Create a new registration then add it to the database
         MemberClassRegistration registration;
         try {
-            registration = new MemberClassRegistration(memberID, classID, MembershipStatus.ACTIVE, registrationDate);
+            registration = new MemberClassRegistration(memberID, classID, "Active", registrationDate);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
             return false;
@@ -99,20 +100,20 @@ public class TrainerRole {
             System.out.println("Class not found!!");
             return false;
         }
-        class_.setAvailableSeats(class_.getAvailabeSeats() + 1);
 
         LocalDate registrationDate = registration.getRegistrationDate();
         LocalDate currentDate = LocalDate.now();
         Period period = Period.between(registrationDate, currentDate);
 
         // Issue a refund if the member cancels within 3 days of the registrationDate
-        if (period.getYears() == 0 && period.getMonths() == 0 && period.getDays() <= 3)
-            System.out.println("You get a refund.");
+        if (period.getYears() == 0 && period.getMonths() == 0 && period.getDays() <= 3) {
+            class_.setAvailableSeats(class_.getAvailableSeats() + 1);
+            // Update registration status to Canceled
+            registration.setStatus("Canceled");
+            return true;
+        }
+        return false;
         
-        // Update registration status to Canceled
-        registration.setStatus(MembershipStatus.CANCELED);
-
-        return true;
     }
 
     // Returns a list of all class registrations stored in the MemberClassRegistrationDatabase
