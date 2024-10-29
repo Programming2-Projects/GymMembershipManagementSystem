@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class TrainerDatabase {
+public class TrainerDatabase extends DataBases<Trainer>{
     private ArrayList<Trainer> records;
     private String fileName;
 
@@ -11,6 +11,7 @@ public class TrainerDatabase {
         readFromFile();
     }
 
+    @Override
     public void readFromFile () {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(this.fileName))) {
             String line;
@@ -21,6 +22,7 @@ public class TrainerDatabase {
         }
     }
 
+    @Override
     public Trainer createRecordFrom (String line) {
         if (line == null || line.isEmpty())
             return null;
@@ -37,10 +39,12 @@ public class TrainerDatabase {
         return new Trainer(trainerId, name, email, speciality, phoneNumber);
     }
 
+    @Override
     public ArrayList<Trainer> returnAllRecords () {
         return records;
     }
 
+    @Override
     public boolean contains (String key) {
         for (Trainer record:records)
             if (record.getSearchKey().equals(key))
@@ -48,6 +52,7 @@ public class TrainerDatabase {
         return false;
     }
 
+    @Override
     public Trainer getRecord (String key) {
         for (Trainer trainer:records)
             if (trainer.getSearchKey().equals(key))
@@ -55,6 +60,7 @@ public class TrainerDatabase {
         return null;
     }
 
+    @Override
     public boolean insertRecord (Trainer record) {
         if (contains(record.getSearchKey()))
             return false;
@@ -62,10 +68,12 @@ public class TrainerDatabase {
         return true;
     }
 
+    @Override
     public boolean deleteRecord (Trainer record) {
         return this.records.remove(record); 
     }
 
+    @Override
     public boolean saveToFile () {
         try (PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter(this.fileName)))) {
             String line;

@@ -8,7 +8,7 @@ public class Class {
         if (!Validator.isValidName(className))
             throw new IllegalArgumentException("Invalid class name!");
         if (!Validator.isValidID(trainerID, 'T'))
-            throw new IllegalArgumentException("Invalid trainer ID!");
+            throw new IllegalArgumentException("Invalid trainer ID!"); 
             
         this.classID = classID;
         this.className = className;

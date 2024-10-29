@@ -23,7 +23,6 @@ public class MemberClassRegistration {
             throw new IllegalArgumentException("Invalid Member ID!");
         if (!Validator.isValidID(classID))
             throw new IllegalArgumentException("Invalid Class ID!"); 
-
         this.memberID = memberID;
         this.classID = classID;
         this.status = status;

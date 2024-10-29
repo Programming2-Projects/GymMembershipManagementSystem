@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class MemberDatabase extends DataBases{
+public class MemberDatabase extends DataBases<Member>{
     private ArrayList<Member> records;
     private String fileName;
 
@@ -11,6 +11,7 @@ public class MemberDatabase extends DataBases{
         readFromFile();
     }
 
+    @Override
     public void readFromFile () {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(this.fileName))) {
             String line;
@@ -21,6 +22,7 @@ public class MemberDatabase extends DataBases{
         }
     }
 
+    @Override
     public Member createRecordFrom (String line) {
         if (line == null || line.isEmpty())
             return null;
@@ -38,10 +40,12 @@ public class MemberDatabase extends DataBases{
         return new Member(memberId, name, membershipType, email, phoneNumber, status);
     }
 
+    @Override
     public ArrayList<Member> returnAllRecords () {
         return records;
     }
 
+    @Override
     public boolean contains (String key) {
         for (Member record:records)
             if (record.getSearchKey().equals(key))
@@ -49,6 +53,7 @@ public class MemberDatabase extends DataBases{
         return false;
     }
 
+    @Override
     public Member getRecord (String key) {
         for (Member member:records)
             if (member.getSearchKey().equals(key))
@@ -56,6 +61,7 @@ public class MemberDatabase extends DataBases{
         return null;
     }
 
+    @Override
     public boolean insertRecord (Member record) {
         if (contains(record.getSearchKey()))
             return false;
@@ -63,10 +69,12 @@ public class MemberDatabase extends DataBases{
         return true;
     }
 
+    @Override
     public boolean deleteRecord (Member record) {
         return this.records.remove(record); 
     }
 
+    @Override
     public boolean saveToFile () {
         try (PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter(this.fileName)))) {
             String line;

@@ -2,7 +2,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class MemberClassRegistrationDatabase extends DataBases{
+public class MemberClassRegistrationDatabase extends DataBases<MemberClassRegistration>{
     private String fileName;
     private ArrayList<MemberClassRegistration> records;
 
@@ -12,6 +12,7 @@ public class MemberClassRegistrationDatabase extends DataBases{
         readFromFile();
     }
 
+    @Override
     public void readFromFile () {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(this.fileName))) {
             String line;
@@ -22,6 +23,7 @@ public class MemberClassRegistrationDatabase extends DataBases{
         }
     }
 
+    @Override
     public MemberClassRegistration createRecordFrom (String line) {
         if (line == null || line.isEmpty())
             return null;
@@ -37,10 +39,12 @@ public class MemberClassRegistrationDatabase extends DataBases{
         return new MemberClassRegistration(memberID, classID, status, registrationDate);
     }
 
+    @Override
     public ArrayList<MemberClassRegistration> returnAllRecords () {
         return records;
     }
 
+    @Override
     public boolean contains (String key) {
         for (MemberClassRegistration registration:records)
             if (registration.getSearchKey().equals(key))
@@ -48,6 +52,7 @@ public class MemberClassRegistrationDatabase extends DataBases{
         return false;
     }
 
+    @Override
     public MemberClassRegistration getRecord (String key) {
         for (MemberClassRegistration registration:records)
             if (registration.getSearchKey().equals(key))
@@ -55,6 +60,7 @@ public class MemberClassRegistrationDatabase extends DataBases{
         return null;
     }
 
+    @Override
     public boolean insertRecord (MemberClassRegistration registration) {
         if (contains(registration.getSearchKey()))
             return false;
@@ -62,10 +68,12 @@ public class MemberClassRegistrationDatabase extends DataBases{
         return true;
     }
 
+    @Override
     public boolean deleteRecord (MemberClassRegistration record) {
         return this.records.remove(record); 
     }
 
+    @Override
     public boolean saveToFile () {
         try (PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter(this.fileName)))) {
             String line;
