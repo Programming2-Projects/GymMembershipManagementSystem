@@ -4,7 +4,7 @@ public class AdminRole {
     private TrainerDatabase trainerDatabase;
 
     public AdminRole() {
-        this.trainerDatabase = new TrainerDatabase("Trainers.txt");
+        this.trainerDatabase = new TrainerDatabase("lib/Trainers.txt");
     }
 
     public boolean addTrainer (String trainerId, String name, String email, String specialty, String phoneNumber){
