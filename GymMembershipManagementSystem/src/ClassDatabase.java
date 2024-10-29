@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class ClassDatabase {
+public class ClassDatabase extends DataBases{
     private String fileName;
     private ArrayList<Class> records;
 
@@ -66,16 +66,18 @@ public class ClassDatabase {
         return this.records.remove(record); 
     }
 
-    public void saveToFile () {
+    public boolean saveToFile () {
         try (PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter(this.fileName)))) {
             String line;
             for (Class record:records) {
                 line = record.lineRepresentation();
                 printWriter.println(line);
             }
+            return true;
         } catch (IOException e) {
             e.getStackTrace();
         }
+        return false;
     }
 
 }
