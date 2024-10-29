@@ -2,7 +2,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class MemberClassRegistrationDatabase {
+public class MemberClassRegistrationDatabase extends DataBases{
     private String fileName;
     private ArrayList<MemberClassRegistration> records;
 
@@ -32,8 +32,8 @@ public class MemberClassRegistrationDatabase {
 
         String memberID = data[0];
         String classID = data[1];
-        MembershipStatus status = MembershipStatus.valueOf(data[2]);
-        LocalDate registrationDate = LocalDate.parse(data[3]);
+        LocalDate registrationDate = LocalDate.parse(data[2]);
+        String status = data[3];
         return new MemberClassRegistration(memberID, classID, status, registrationDate);
     }
 
@@ -66,16 +66,18 @@ public class MemberClassRegistrationDatabase {
         return this.records.remove(record); 
     }
 
-    public void saveToFile () {
+    public boolean saveToFile () {
         try (PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter(this.fileName)))) {
             String line;
             for (MemberClassRegistration registration:records) {
                 line = registration.lineRepresentation();
                 printWriter.println(line);
             }
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
 }

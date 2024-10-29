@@ -3,26 +3,26 @@ import java.time.*;
 public class MemberClassRegistration {
     private String memberID;
     private String classID;
-    private MembershipStatus status;
+    private String status;
     private LocalDate registrationDate;
 
     public MemberClassRegistration(String memberID, String classID) {
         if (!Validator.isValidID(memberID))
             throw new IllegalArgumentException("Invalid Member ID!");
         if (!Validator.isValidID(classID))
-            throw new IllegalArgumentException("Invalid Class ID!");
+            throw new IllegalArgumentException("Invalid Class ID!"); 
 
         this.memberID = memberID;
         this.classID = classID;
-        this.status = MembershipStatus.ACTIVE;
+        this.status = "Active";
         this.registrationDate = LocalDate.now();
     }
 
-    public MemberClassRegistration(String memberID, String classID, MembershipStatus status, LocalDate registrationDate) {
+    public MemberClassRegistration(String memberID, String classID, String status, LocalDate registrationDate) {
         if (!Validator.isValidID(memberID))
             throw new IllegalArgumentException("Invalid Member ID!");
         if (!Validator.isValidID(classID))
-            throw new IllegalArgumentException("Invalid Class ID!");
+            throw new IllegalArgumentException("Invalid Class ID!"); 
 
         this.memberID = memberID;
         this.classID = classID;
@@ -46,15 +46,22 @@ public class MemberClassRegistration {
         return memberID + classID;
     }
 
-    public void setStatus (MembershipStatus status) {
+    public void setStatus (String status) {
         this.status = status;
     }
 
     public String lineRepresentation (){
         String line = String.join(",", memberID, classID, 
-                        registrationDate.toString(),
-                        String.valueOf(status));
+                        registrationDate.toString(), status);
         return line;
     }
+
+    @Override
+    public String toString() {
+        return "MemberClassRegistration [memberID=" + memberID + ", classID=" + classID + ", status=" + status
+                + ", registrationDate=" + registrationDate + "]";
+    }
+
+    
     
 }

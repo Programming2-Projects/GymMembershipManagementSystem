@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class MemberDatabase {
+public class MemberDatabase extends DataBases{
     private ArrayList<Member> records;
     private String fileName;
 
@@ -31,10 +31,10 @@ public class MemberDatabase {
 
         String memberId = data[0];
         String name = data[1];
-        MembershipType membershipType = MembershipType.valueOf(data[2].toUpperCase());
-        String  email = data[3];
+        String membershipType = data[2];
+        String email = data[3];
         String phoneNumber = data[4];
-        MembershipStatus status = MembershipStatus.valueOf(data[5].toUpperCase());
+        String status = data[5];
         return new Member(memberId, name, membershipType, email, phoneNumber, status);
     }
 
@@ -67,16 +67,18 @@ public class MemberDatabase {
         return this.records.remove(record); 
     }
 
-    public void saveToFile () {
+    public boolean saveToFile () {
         try (PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter(this.fileName)))) {
             String line;
             for (Member member:records) {
                 line = member.lineRepresentation();
                 printWriter.println(line);
             }
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return false;
     }
     
 }

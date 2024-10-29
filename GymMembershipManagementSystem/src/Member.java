@@ -1,9 +1,9 @@
 public class Member {
     private String name, email, memberId, phoneNumber;
-    private MembershipStatus status;
-    private MembershipType membershipType;
+    private String status;
+    private String membershipType;
 
-    public Member(String memberId, String name, MembershipType membershipType, String email, String phoneNumber, MembershipStatus status) {
+    public Member(String memberId, String name, String membershipType, String email, String phoneNumber, String status) {
         if (!Validator.isValidID(memberId, 'M'))
             throw new IllegalArgumentException("Invalid ID number!");
         if (!Validator.isValidName(name))
@@ -23,8 +23,8 @@ public class Member {
 
     public String lineRepresentation () {
         String line = String.join(",", 
-        memberId, name, String.valueOf(membershipType), 
-        email, phoneNumber, String.valueOf(status));
+        memberId, name, membershipType, 
+        email, phoneNumber, status);
 
         return line;
     }
@@ -32,5 +32,13 @@ public class Member {
     public String getSearchKey () {
         return memberId;
     }
+
+    @Override
+    public String toString() {
+        return "Member [name=" + name + ", email=" + email + ", memberId=" + memberId + ", phoneNumber=" + phoneNumber
+                + ", status=" + status + ", membershipType=" + membershipType + "]";
+    }
+
+    
 
 }
