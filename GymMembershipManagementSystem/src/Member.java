@@ -1,17 +1,17 @@
-public class Member {
+public class Member implements Recordable{
     private String name, email, memberId, phoneNumber;
     private String status;
     private String membershipType;
 
     public Member(String memberId, String name, String membershipType, String email, String phoneNumber, String status) {
-        if (!Validator.isValidID(memberId, 'M'))
+         if (!Validator.isValidID(memberId, 'M'))
             throw new IllegalArgumentException("Invalid ID number!");
         if (!Validator.isValidName(name))
             throw new IllegalArgumentException("Invalid name!");
         if (!Validator.isValidEmail(email))
             throw new IllegalArgumentException("Invalid email address!");
         if (!Validator.isValidPhoneNumber(phoneNumber))
-            throw new IllegalArgumentException("Invalid phone number!");
+            throw new IllegalArgumentException("Invalid phone number!"); 
 
         this.memberId = memberId;
         this.name = name;
@@ -21,6 +21,7 @@ public class Member {
         this.status = status;
     }
 
+    @Override
     public String lineRepresentation () {
         String line = String.join(",", 
         memberId, name, membershipType, 
@@ -29,6 +30,7 @@ public class Member {
         return line;
     }
 
+    @Override
     public String getSearchKey () {
         return memberId;
     }

@@ -11,7 +11,6 @@ public class TrainerRole {
         this.memberDatabase = new MemberDatabase("lib/Members.txt");
         this.classDatabase = new ClassDatabase("lib/Class.txt");
         this.registrationDatabase = new MemberClassRegistrationDatabase("lib/Registration.txt");
-        System.out.println("registration");
     }
 
     // Creates a new member object and inserts it into the MemberDatabase
@@ -49,26 +48,19 @@ public class TrainerRole {
     }
 
     public boolean registerMemberForClass (String memberID, String classID, LocalDate registrationDate) {
+        
+        if (!memberDatabase.contains(memberID))
+            return false;
+        
         // Get refrence to the class object with the specified ID
         Class class_ = classDatabase.getRecord(classID);
-        if (class_ == null) {
-            System.out.println("Class not found!!");
+        if (class_ == null) 
             return false;
-        }
-
-        // Get refrence to the member object with the specified ID
-        Member member = memberDatabase.getRecord(memberID);
-        if (member == null) {
-            System.out.println("Member not found!!");
-            return false;
-        }
 
         // Check for available seats
         int seats = class_.getAvailableSeats();
-        if (seats < 1) {
-            System.out.println("No available seats!!");
+        if (seats < 1)
             return false;
-        }
 
         // Create a new registration then add it to the database
         MemberClassRegistration registration;
@@ -80,26 +72,24 @@ public class TrainerRole {
         }
         if (registrationDatabase.insertRecord(registration))
             class_.setAvailableSeats(seats - 1);
-        else {
-            System.out.println("Error inserting registration record");
+        else
             return false;
-        }
+
         return true;     
     }
 
     public boolean cancelRegistration (String memberID, String classID) {
-        MemberClassRegistration registration = registrationDatabase.getRecord(memberID + classID);
-        if (registration == null) {
-            System.out.println("Registration not found!!");
+        
+        if (!memberDatabase.contains(memberID))
             return false;
-        }
 
-        // Increase number of available seats by 1
-        Class class_ = classDatabase.getRecord(classID);
-        if (class_ == null) {
-            System.out.println("Class not found!!");
+        MemberClassRegistration registration = registrationDatabase.getRecord(memberID + classID);
+        if (registration == null)
             return false;
-        }
+
+        Class class_ = classDatabase.getRecord(classID);
+        if (class_ == null)
+            return false;
 
         LocalDate registrationDate = registration.getRegistrationDate();
         LocalDate currentDate = LocalDate.now();
@@ -107,6 +97,7 @@ public class TrainerRole {
 
         // Issue a refund if the member cancels within 3 days of the registrationDate
         if (period.getYears() == 0 && period.getMonths() == 0 && period.getDays() <= 3) {
+            // Increase number of available seats by 1
             class_.setAvailableSeats(class_.getAvailableSeats() + 1);
             // Update registration status to Canceled
             registration.setStatus("Canceled");

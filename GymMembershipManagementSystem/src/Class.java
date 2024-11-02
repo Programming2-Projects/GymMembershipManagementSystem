@@ -1,4 +1,4 @@
-public class Class {
+public class Class implements Recordable{
     private String classID, className, trainerID;
     private int duration, availableSeats;
 
@@ -8,7 +8,7 @@ public class Class {
         if (!Validator.isValidName(className))
             throw new IllegalArgumentException("Invalid class name!");
         if (!Validator.isValidID(trainerID, 'T'))
-            throw new IllegalArgumentException("Invalid trainer ID!"); 
+            throw new IllegalArgumentException("Invalid trainer ID!");
             
         this.classID = classID;
         this.className = className;
@@ -25,6 +25,7 @@ public class Class {
         this.availableSeats = availableSeats;
     }
 
+    @Override
     public String lineRepresentation () {
         String line = String.join(",",
         classID, className, trainerID,
@@ -33,6 +34,7 @@ public class Class {
         return line;
     }
 
+    @Override
     public String getSearchKey () {
         return classID;
     }

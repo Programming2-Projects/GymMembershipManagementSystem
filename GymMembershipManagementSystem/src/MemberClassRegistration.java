@@ -1,6 +1,6 @@
 import java.time.*;
 
-public class MemberClassRegistration {
+public class MemberClassRegistration implements Recordable{
     private String memberID;
     private String classID;
     private String status;
@@ -10,7 +10,7 @@ public class MemberClassRegistration {
         if (!Validator.isValidID(memberID))
             throw new IllegalArgumentException("Invalid Member ID!");
         if (!Validator.isValidID(classID))
-            throw new IllegalArgumentException("Invalid Class ID!"); 
+            throw new IllegalArgumentException("Invalid Class ID!");
 
         this.memberID = memberID;
         this.classID = classID;
@@ -41,6 +41,7 @@ public class MemberClassRegistration {
         return registrationDate;
     }
 
+    @Override
     public String getSearchKey(){
         return memberID + classID;
     }
@@ -49,6 +50,7 @@ public class MemberClassRegistration {
         this.status = status;
     }
 
+    @Override
     public String lineRepresentation (){
         String line = String.join(",", memberID, classID, 
                         registrationDate.toString(), status);

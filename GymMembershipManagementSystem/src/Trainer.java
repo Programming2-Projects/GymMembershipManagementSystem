@@ -1,4 +1,4 @@
-public class Trainer {
+public class Trainer implements Recordable{
 private String trainerId;
 private String name;
 private String email;
@@ -22,6 +22,7 @@ private String phoneNumber;
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
     public String lineRepresentation (){
         String line = String.join(",",
         trainerId, name, email, speciality, phoneNumber);
@@ -29,6 +30,7 @@ private String phoneNumber;
         return line;
     }
 
+    @Override
     public String getSearchKey () {
         return trainerId;
     }
